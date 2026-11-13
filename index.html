@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ichidai Hattori | Web Marketer Portfolio</title>
+<title>ICHIDAI HATTORI | Web Marketer Portfolio</title>
 <meta name="description" content="Portfolio of web marketer Ichidai Hattori — works, skills and certifications. Prepared for prospective employers.">
 <meta name="robots" content="noindex">
 <style>
@@ -11,190 +11,262 @@
     --navy:#1B2A4A; --teal:#0F5E68; --vermil:#C73E2C; --ecru:#FAF6EE; --ink:#22262b; --sub:#5a6270; --line:#e2e6ec;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--ink);background:#fff;line-height:1.7;font-size:15px;}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px 72px;}
-  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 130%);color:#fff;padding:56px 24px 48px;margin:0 -24px 8px;}
-  .hero .inner{max-width:960px;margin:0 auto;padding:0 24px;}
-  .hero .role{font-size:13px;letter-spacing:.18em;font-weight:700;color:#ffd9d2;}
-  .hero h1{font-size:38px;letter-spacing:.04em;margin:6px 0 2px;}
-  .hero .lead{font-size:17px;font-weight:700;margin:14px 0 8px;}
-  .hero p{color:#e6ebf2;max-width:660px;}
-  .hero .stats{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:22px;}
-  .hero .stat b{display:block;font-size:24px;line-height:1.2;}
+  .container{max-width:1060px;margin:0 auto;padding:0 24px;}
+  /* HEADER */
+  .site-header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:50;}
+  .site-header .container{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .brand{font-weight:800;color:var(--navy);letter-spacing:.06em;font-size:16px;text-decoration:none;}
+  .brand small{display:block;font-size:10.5px;color:var(--sub);letter-spacing:.14em;font-weight:700;}
+  .nav ul{display:flex;gap:22px;list-style:none;}
+  .nav a{color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700;}
+  .nav a:hover{color:var(--teal);}
+  .nav a.lang{color:var(--teal);border:1px solid var(--teal);border-radius:999px;padding:2px 12px;}
+  @media (max-width:760px){ .nav ul{gap:13px;} .nav a{font-size:12px;} .brand small{display:none;} }
+  /* HERO */
+  .hero{background:linear-gradient(130deg,var(--navy) 55%,var(--teal) 135%);color:#fff;padding:84px 0 72px;}
+  .hero .kicker{font-size:13px;letter-spacing:.2em;font-weight:700;color:#ffd9d2;}
+  .hero h1{font-size:46px;line-height:1.25;letter-spacing:.02em;margin:14px 0 16px;}
+  .hero h1 .accent{color:#ffd9d2;}
+  .hero p{color:#e6ebf2;max-width:680px;font-size:16px;}
+  .hero .stats{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:30px;}
+  .hero .stat b{display:block;font-size:27px;line-height:1.2;}
   .hero .stat span{font-size:12.5px;color:#cfd8e3;}
-  h2{font-size:20px;color:var(--navy);letter-spacing:.04em;margin:44px 0 6px;}
-  h2 + .sub{color:var(--sub);font-size:13px;margin-bottom:16px;letter-spacing:.06em;}
-  .works{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
-  .card img{width:100%;height:180px;object-fit:cover;display:block;background:var(--ecru);}
-  .card .ph{height:180px;background:linear-gradient(120deg,var(--ecru),#e9eef3);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:700;font-size:16.5px;letter-spacing:.03em;text-align:center;padding:0 16px;}
-  .card .body{padding:14px 16px 16px;}
-  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
-  .chip{font-size:11.5px;background:var(--ecru);color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-weight:700;}
+  .hero .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;}
+  .btn--solid{background:var(--vermil);color:#fff;}
+  .btn--ghost{border:1.5px solid #fff;color:#fff;}
+  /* SECTIONS */
+  .section{padding:64px 0 8px;}
+  .section--tint{background:var(--ecru);margin-top:56px;padding:56px 0 64px;}
+  .sec-label{font-size:12px;letter-spacing:.2em;color:var(--vermil);font-weight:800;}
+  .sec-title{font-size:27px;color:var(--navy);letter-spacing:.02em;margin:4px 0 8px;}
+  .sec-lead{color:var(--sub);max-width:720px;margin-bottom:26px;}
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .grid--2{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .grid,.grid--2{grid-template-columns:1fr;} .hero h1{font-size:33px;} }
+  .card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;}
+  .card img{width:100%;height:170px;object-fit:cover;display:block;background:var(--ecru);}
+  .card .ph{height:170px;background:linear-gradient(120deg,#eef1f5,#e3e9f0);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:800;font-size:16px;letter-spacing:.03em;text-align:center;padding:0 16px;}
+  .card .body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:11px;background:var(--ecru);color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-weight:700;}
   .chip.hot{background:var(--vermil);border-color:var(--vermil);color:#fff;}
-  .card h3{font-size:16.5px;color:var(--navy);margin-bottom:4px;}
-  .card p{font-size:13.5px;}
+  .card h3{font-size:16px;color:var(--navy);line-height:1.45;}
+  .card p{font-size:13.5px;color:var(--ink);flex:1;}
   .card a{color:var(--teal);text-decoration:none;font-size:13px;font-weight:700;}
   .card a:hover{text-decoration:underline;}
-  .skills{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;}
-  .skills .item b{color:var(--navy);display:block;font-size:15.5px;}
-  .skills .item span{font-size:14px;}
-  .tl{border-left:3px solid var(--line);margin:8px 0 0 6px;padding-left:22px;}
-  .tl .row{position:relative;margin-bottom:18px;}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .svc b{color:var(--navy);font-size:16px;display:block;margin-bottom:5px;}
+  .svc span{font-size:14px;}
+  /* TIMELINE */
+  .tl{border-left:3px solid var(--line);margin:6px 0 0 6px;padding-left:22px;max-width:760px;}
+  .tl .row{position:relative;margin-bottom:20px;}
   .tl .row::before{content:"";position:absolute;left:-29.5px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--teal);}
   .tl .period{color:var(--teal);font-weight:700;font-size:13px;}
-  .tl .title{font-weight:700;color:var(--navy);}
+  .tl .title{font-weight:700;color:var(--navy);font-size:16px;}
   .tl p{font-size:14px;}
-  .cert li{margin-bottom:8px;}
+  /* CERTS */
+  .cert{margin-left:1.2em;}
+  .cert li{margin-bottom:9px;}
   .cert a{color:var(--teal);text-decoration:none;word-break:break-all;font-size:13px;}
   .cert a:hover{text-decoration:underline;}
-  ul.plain{margin-left:1.2em;}
-  table.cond{border-collapse:collapse;width:100%;margin-top:8px;}
-  table.cond th,table.cond td{border:1px solid var(--line);padding:9px 12px;text-align:left;font-size:14.5px;}
-  table.cond th{background:var(--ecru);color:var(--navy);width:150px;}
-  .contact{background:var(--ecru);border-radius:12px;padding:20px 22px;margin-top:20px;}
-  .contact a{color:var(--teal);font-weight:700;text-decoration:none;}
-  footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);color:var(--sub);font-size:12.5px;}
-  @media (max-width:680px){ .works,.skills{grid-template-columns:1fr;} .hero h1{font-size:30px;} }
-  @media print{ .hero{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;} }
+  /* TABLE */
+  table.cond{border-collapse:collapse;width:100%;max-width:640px;margin-top:6px;background:#fff;}
+  table.cond th,table.cond td{border:1px solid var(--line);padding:9px 13px;text-align:left;font-size:14.5px;}
+  table.cond th{background:var(--ecru);color:var(--navy);width:160px;}
+  /* CONTACT */
+  .section--dark{background:var(--navy);color:#fff;margin-top:64px;padding:64px 0 72px;}
+  .section--dark .sec-title{color:#fff;}
+  .section--dark p{color:#cfd8e3;max-width:640px;margin-bottom:24px;}
+  /* FOOTER */
+  .site-footer{border-top:1px solid var(--line);padding:22px 0 30px;}
+  .site-footer .container{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;}
+  .site-footer .fb{color:var(--navy);font-weight:800;letter-spacing:.05em;font-size:13.5px;}
+  .site-footer small{color:var(--sub);display:block;font-weight:400;letter-spacing:0;}
+  .site-footer .fl{display:flex;gap:18px;}
+  .site-footer a{color:var(--sub);text-decoration:none;font-size:13px;}
+  .site-footer a:hover{color:var(--teal);}
+  @media print{ .site-header{display:none;} .hero{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;} }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<div style="text-align:right;padding:12px 4px 0;font-size:13px;"><a href="ja.html" style="color:#0F5E68;text-decoration:none;font-weight:700;">日本語版はこちら →</a></div>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#top">ICHIDAI HATTORI<small>WEB MARKETER / DIGITAL CREATOR</small></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="lang" href="ja.html">日本語</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<div class="hero">
-  <div class="inner">
-    <div class="role">WEB MARKETER / DIGITAL CREATOR</div>
-    <h1>ICHIDAI HATTORI</h1>
-    <div class="lead">Data-driven web marketing — from acquisition to improvement, end to end.</div>
-    <p>Freelance since 2020 and fully remote for six years. I work across SEO, advertising, social media, website and e-commerce production, and GA4 analytics. I also apply AI to marketing operations and provide English–Japanese translation and localization. As Operations Manager at Godo Kaisha Wing, I run a training academy for freelance creators.</p>
+<section class="hero" id="top">
+  <div class="container">
+    <div class="kicker">PORTFOLIO — FOR PROSPECTIVE EMPLOYERS</div>
+    <h1>Data-driven web marketing,<br>from <span class="accent">acquisition</span> to improvement.</h1>
+    <p>Freelance since 2020 and fully remote for six years. I work across SEO, advertising, social media, website and e-commerce production, and GA4 analytics — and I also handle sales promotion, B2B outreach, AI-assisted operations, and English–Japanese translation and localization. As Operations Manager at Godo Kaisha Wing, I run a training academy for freelance creators.</p>
     <div class="stats">
       <div class="stat"><b>6 yrs</b><span>Fully remote practice</span></div>
       <div class="stat"><b>10,000+</b><span>Instagram followers (self-run)</span></div>
       <div class="stat"><b>2</b><span>Google certifications</span></div>
       <div class="stat"><b>2 sites</b><span>Membership sites built &amp; operated</span></div>
     </div>
-  </div>
-</div>
-
-<h2>Selected Works</h2>
-<div class="sub">WORKS / PROJECTS</div>
-<div class="works">
-
-  <div class="card">
-    <div class="ph">Influencer Coordination<br>for the Japanese Market</div>
-    <div class="body">
-      <div class="chips"><span class="chip hot">In progress</span><span class="chip">International</span><span class="chip">Influencer Marketing</span></div>
-      <h3>YouTube Creator Coordination — Japan</h3>
-      <p>Contracted by an overseas influencer marketing agency to source, negotiate with and manage Japanese YouTube creators for brand campaigns (from November 2026).</p>
+    <div class="cta">
+      <a class="btn btn--solid" href="#works">See my works</a>
+      <a class="btn btn--ghost" href="#contact">Contact me</a>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <div class="ph">Freelance Academy<br>Operations Lead</div>
-    <div class="body">
-      <div class="chips"><span class="chip">Business Operations</span><span class="chip">Customer Acquisition</span><span class="chip">Godo Kaisha Wing</span></div>
-      <h3>Freelance Academy — Website &amp; Video Courses</h3>
-      <p>Operations Manager at Godo Kaisha Wing, overseeing two training courses (website creation and video production), including recruitment marketing and day-to-day operations.</p>
+<section class="section" id="works">
+  <div class="container">
+    <div class="sec-label">WORKS</div>
+    <h2 class="sec-title">Selected Works</h2>
+    <p class="sec-lead">Current and recent projects — client work, business operations, and sites I planned, built and run myself.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="ph">Influencer Coordination<br>for the Japanese Market</div>
+        <div class="body">
+          <div class="chips"><span class="chip hot">In progress</span><span class="chip">International</span><span class="chip">Influencer Marketing</span></div>
+          <h3>YouTube Creator Coordination — Japan</h3>
+          <p>Contracted by an overseas influencer marketing agency to source, negotiate with and manage Japanese YouTube creators for brand campaigns (from November 2026).</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph">Freelance Academy<br>Operations Lead</div>
+        <div class="body">
+          <div class="chips"><span class="chip">Business Operations</span><span class="chip">Customer Acquisition</span><span class="chip">Godo Kaisha Wing</span></div>
+          <h3>Freelance Academy — Website &amp; Video Courses</h3>
+          <p>Operations Manager at Godo Kaisha Wing, overseeing two training courses (website creation and video production), including recruitment marketing and day-to-day operations.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://2026webai-lab.github.io/nomado-kaiinnsaito/img/hero.webp" alt="Nomad Community">
+        <div class="body">
+          <div class="chips"><span class="chip">Web Production</span><span class="chip">In operation</span></div>
+          <h3>Nomad Community — Membership Website</h3>
+          <p>A free, approval-based membership community for digital nomads working worldwide. Planned, built and operated end to end.</p>
+          <a href="https://2026webai-lab.github.io/nomado-kaiinnsaito/">Visit the site →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph">TikTok Membership Site<br>Built &amp; Operated</div>
+        <div class="body">
+          <div class="chips"><span class="chip">Web Production</span><span class="chip">In operation</span></div>
+          <h3>TikTok Membership Website</h3>
+          <p>A free, screening-based membership site where members apply for spare-time jobs, with LINE login and member pages. Built and operated by Wing.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph">Client Portfolio Website<br>Design, Build &amp; Analytics</div>
+        <div class="body">
+          <div class="chips"><span class="chip">Web Production</span><span class="chip">GA4</span><span class="chip">English Pages</span></div>
+          <h3>Portfolio for Hotel &amp; Translation Clients</h3>
+          <p>An English-ready portfolio site with dedicated pages for hotels and tourism businesses and for translation clients, measured and improved with GA4.</p>
+          <a href="https://2026webai-lab.github.io/newportfolio/">Visit the site →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ph">Social Media<br>Run In-House</div>
+        <div class="body">
+          <div class="chips"><span class="chip">Social Media</span><span class="chip">Short-Form Video</span></div>
+          <h3>Social Accounts &amp; Short-Form Video</h3>
+          <p>I run my own Instagram (10,000+ followers) and TikTok (2,200+) accounts — planning, producing and posting short-form videos, including an original short-drama series, and iterating based on performance data.</p>
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <img src="https://2026webai-lab.github.io/nomado-kaiinnsaito/img/hero.webp" alt="Nomad Community">
-    <div class="body">
-      <div class="chips"><span class="chip">Web Production</span><span class="chip">In operation</span></div>
-      <h3>Nomad Community — Membership Website</h3>
-      <p>A free, approval-based membership community for digital nomads working worldwide. Planned, built and operated end to end.</p>
-      <a href="https://2026webai-lab.github.io/nomado-kaiinnsaito/">Visit the site →</a>
+<section class="section--tint" id="services">
+  <div class="container">
+    <div class="sec-label">SERVICES</div>
+    <h2 class="sec-title">What I Can Do</h2>
+    <p class="sec-lead">From strategy to execution — marketing, promotion, production and languages in one pair of hands.</p>
+    <div class="grid grid--2">
+      <div class="svc"><b>Marketing</b><span>SEO / GEO, Google Ads &amp; social advertising, social media operations (Instagram, TikTok, YouTube), GA4 analytics, landing page &amp; funnel design</span></div>
+      <div class="svc"><b>Sales &amp; Promotion</b><span>Sales promotion planning and execution for businesses (social media campaigns, funnel design), B2B proposal outreach — including sales proposals to hotels and tourism businesses in Thailand and other overseas markets — recruitment marketing, and influencer negotiation and coordination</span></div>
+      <div class="svc"><b>Production</b><span>Website &amp; e-commerce production (PHP / MySQL), video editing (Premiere Pro), short-form video planning &amp; production</span></div>
+      <div class="svc"><b>AI &amp; Languages</b><span>AI-assisted advertising and workflow automation, Python automation. English–Japanese translation and localization (hotels, tourism, cross-border e-commerce)</span></div>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <div class="ph">TikTok Membership Site<br>Built &amp; Operated</div>
-    <div class="body">
-      <div class="chips"><span class="chip">Web Production</span><span class="chip">In operation</span></div>
-      <h3>TikTok Membership Website</h3>
-      <p>A free, screening-based membership site where members apply for spare-time jobs, with LINE login and member pages. Built and operated by Wing.</p>
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-label">ABOUT</div>
+    <h2 class="sec-title">Career &amp; Profile</h2>
+    <p class="sec-lead">Based in Chiba, Japan. Working fully remotely with clients in Japan and overseas.</p>
+    <div class="tl">
+      <div class="row">
+        <div class="period">2026 — Present</div>
+        <div class="title">Operations Manager, Godo Kaisha Wing (concurrent)</div>
+        <p>Overall operations of the Freelance Academy; also coordinating Japanese creators for an overseas marketing agency.</p>
+      </div>
+      <div class="row">
+        <div class="period">Jan 2020 — Present</div>
+        <div class="title">Freelance Web Marketer / Digital Creator</div>
+        <p>Web marketing support for companies and local businesses — SEO, advertising, social media and website production — with data-driven improvement, delivered fully remotely.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="ph">Client Portfolio Website<br>Design, Build &amp; Analytics</div>
-    <div class="body">
-      <div class="chips"><span class="chip">Web Production</span><span class="chip">GA4</span><span class="chip">English Pages</span></div>
-      <h3>Portfolio for Hotel &amp; Translation Clients</h3>
-      <p>An English-ready portfolio site with dedicated pages for hotels and tourism businesses and for translation clients, measured and improved with GA4.</p>
-      <a href="https://2026webai-lab.github.io/newportfolio/">Visit the site →</a>
+    <h2 class="sec-title" style="margin-top:38px;">Certifications</h2>
+    <ul class="cert">
+      <li>Google Analytics Certification (earned September 2026, valid to September 2027)<br><a href="https://skillshop.credential.net/71cc1be0-ab2e-447b-9fca-dedff3c335b4">https://skillshop.credential.net/71cc1be0-ab2e-447b-9fca-dedff3c335b4</a></li>
+      <li>AI-Powered Performance Ads Certification, Google (earned September 2026, valid to September 2027)<br><a href="https://skillshop.credential.net/099cacbf-d6b7-4e4f-abd5-e06f83bbbf08">https://skillshop.credential.net/099cacbf-d6b7-4e4f-abd5-e06f83bbbf08</a></li>
+    </ul>
+
+    <h2 class="sec-title" style="margin-top:38px;">Interests &amp; Special Skills</h2>
+    <div class="grid grid--2">
+      <div class="svc"><b>Interests</b><span>Car camping and road trips, music, films, reading, gym training, and travel — more than ten trips to Thailand, including an extended stay in Bangkok.</span></div>
+      <div class="svc"><b>Special Skills</b><span>Full Japanese driving licences up to large vehicles and large motorcycles; confident with long-distance driving. Professional-level English reading, writing and translation.</span></div>
     </div>
+
+    <h2 class="sec-title" style="margin-top:38px;">Conditions</h2>
+    <table class="cond">
+      <tr><th>Employment type</th><td>Full-time employee</td></tr>
+      <tr><th>Work style</th><td>Fully remote (based in Chiba, Japan)</td></tr>
+      <tr><th>Start date</th><td>Negotiable</td></tr>
+    </table>
   </div>
+</section>
 
-  <div class="card">
-    <div class="ph">Social Media<br>Run In-House</div>
-    <div class="body">
-      <div class="chips"><span class="chip">Social Media</span><span class="chip">Short-Form Video</span></div>
-      <h3>Social Accounts &amp; Short-Form Video</h3>
-      <p>I run my own Instagram (10,000+ followers) and TikTok (2,200+) accounts — planning, producing and posting short-form videos, including an original short-drama series, and iterating based on performance data.</p>
-    </div>
+<section class="section--dark" id="contact">
+  <div class="container">
+    <div class="sec-label">CONTACT</div>
+    <h2 class="sec-title">Let’s talk.</h2>
+    <p>For full-time opportunities in web marketing, promotion, or digital production — fully remote from Japan — please feel free to get in touch.</p>
+    <a class="btn btn--solid" href="mailto:ichidaif@gmail.com">ichidaif@gmail.com</a>
   </div>
+</section>
 
-</div>
-
-<h2>Skills</h2>
-<div class="sub">SKILLS</div>
-<div class="skills">
-  <div class="item"><b>Marketing</b><span>SEO / GEO, Google Ads &amp; social advertising, social media operations (Instagram, TikTok, YouTube), GA4 analytics, landing page &amp; funnel design</span></div>
-  <div class="item"><b>Production</b><span>Website &amp; e-commerce production (PHP / MySQL), video editing (Premiere Pro), short-form video planning &amp; production</span></div>
-  <div class="item"><b>Sales &amp; Promotion</b><span>Sales promotion planning and execution for businesses (social media campaigns, funnel design), B2B proposal outreach — including sales proposals to hotels and tourism businesses in Thailand and other overseas markets — recruitment marketing, and influencer negotiation and coordination</span></div>
-  <div class="item"><b>AI</b><span>AI-assisted advertising and workflow automation, Python automation</span></div>
-  <div class="item"><b>Languages</b><span>English–Japanese translation and localization (hotels, tourism, cross-border e-commerce)</span></div>
-</div>
-
-<h2>Career</h2>
-<div class="sub">CAREER</div>
-<div class="tl">
-  <div class="row">
-    <div class="period">2026 — Present</div>
-    <div class="title">Operations Manager, Godo Kaisha Wing (concurrent)</div>
-    <p>Overall operations of the Freelance Academy; also coordinating Japanese creators for an overseas marketing agency.</p>
+<footer class="site-footer">
+  <div class="container">
+    <p class="fb">ICHIDAI HATTORI<small>© 2026 HATTORI ICHIDAI · Portfolio for prospective employers</small></p>
+    <p class="fl">
+      <a href="#works">Works</a>
+      <a href="ja.html">日本語版</a>
+      <a href="#top">Back to top</a>
+    </p>
   </div>
-  <div class="row">
-    <div class="period">Jan 2020 — Present</div>
-    <div class="title">Freelance Web Marketer / Digital Creator</div>
-    <p>Web marketing support for companies and local businesses — SEO, advertising, social media and website production — with data-driven improvement, delivered fully remotely.</p>
-  </div>
-</div>
+</footer>
 
-<h2>Certifications</h2>
-<div class="sub">CERTIFICATIONS</div>
-<ul class="plain cert">
-  <li>Google Analytics Certification (earned September 2026, valid to September 2027)<br><a href="https://skillshop.credential.net/71cc1be0-ab2e-447b-9fca-dedff3c335b4">https://skillshop.credential.net/71cc1be0-ab2e-447b-9fca-dedff3c335b4</a></li>
-  <li>AI-Powered Performance Ads Certification, Google (earned September 2026, valid to September 2027)<br><a href="https://skillshop.credential.net/099cacbf-d6b7-4e4f-abd5-e06f83bbbf08">https://skillshop.credential.net/099cacbf-d6b7-4e4f-abd5-e06f83bbbf08</a></li>
-</ul>
-
-<h2>Interests &amp; Special Skills</h2>
-<div class="sub">INTERESTS / SPECIAL SKILLS</div>
-<div class="skills">
-  <div class="item"><b>Interests</b><span>Car camping and road trips, music, films, reading, gym training, and travel — more than ten trips to Thailand, including an extended stay in Bangkok.</span></div>
-  <div class="item"><b>Special Skills</b><span>Full Japanese driving licences up to large vehicles and large motorcycles; confident with long-distance driving. Professional-level English reading, writing and translation.</span></div>
-</div>
-
-<h2>Conditions</h2>
-<div class="sub">CONDITIONS</div>
-<table class="cond">
-  <tr><th>Employment type</th><td>Full-time employee</td></tr>
-  <tr><th>Work style</th><td>Fully remote (based in Chiba, Japan)</td></tr>
-  <tr><th>Start date</th><td>Negotiable</td></tr>
-</table>
-
-<div class="contact">
-  <b>Contact</b><br>
-  Email: <a href="mailto:ichidaif@gmail.com">ichidaif@gmail.com</a>
-</div>
-
-<footer>Ichidai Hattori | Web Marketer Portfolio — prepared for prospective employers</footer>
-
-</div>
 </body>
 </html>
